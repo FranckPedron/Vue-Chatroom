@@ -1,12 +1,13 @@
 <template>
-
+  <ChatView />
 </template>
 
 <script setup>
+import ChatView from "@/components/ChatView";
 
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
