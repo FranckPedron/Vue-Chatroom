@@ -1,11 +1,13 @@
 <template>
   <div class="app">
     <MessagesView />
+    <FormView />
   </div>
 </template>
 
 <script setup>
 import MessagesView from "@/components/MessagesView";
+import FormView from "@/components/FormView";
 </script>
 
 <style lang="scss">
