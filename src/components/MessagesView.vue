@@ -1,6 +1,6 @@
 <template>
   <section class="messages">
-    <MessageView v-for="message in messageStore.messages"
+    <MessageView v-for="message in messages"
                  :key="message.id"
                  :author="message.author"
                  :content="message.content"
@@ -11,8 +11,10 @@
 <script setup>
 import MessageView from "@/components/MessageView";
 import {useMessageStore} from "@/stores/MessageStore";
+import {storeToRefs} from "pinia";
 
 const messageStore = useMessageStore();
+const { messages } = storeToRefs(messageStore);
 
 </script>
 

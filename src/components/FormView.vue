@@ -1,20 +1,20 @@
 <template>
-  <form class="form">
-    <input class="form-input" type="text" placeholder="Saisissez votre message" v-model="currentMessage" @change="handleChange"/>
+  <form class="form" @submit.prevent="addMessage(currentMessage)">
+    <input class="form-input" type="text" placeholder="Saisissez votre message" v-model="currentMessage"/>
     <button class="form-button" type="submit">Envoyer</button>
   </form>
 </template>
 
 <script setup>
 import {useMessageStore} from "@/stores/MessageStore";
+import {storeToRefs} from "pinia";
 
 const messageStore = useMessageStore();
-const currentMessage = messageStore.currentMessage;
+const { currentMessage } = storeToRefs(messageStore);
 
-const handleChange = (e) => {
-  messageStore.$patch(writeMessage(e.target.value));
+const addMessage = (message) => {
+  messageStore.writeMessage(message);
 }
-
 </script>
 
 <style lang="scss">
