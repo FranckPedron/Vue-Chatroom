@@ -13,8 +13,8 @@ import MessageView from "@/components/MessageView";
 import {useMessageStore} from "@/stores/MessageStore";
 import {storeToRefs} from "pinia";
 
-const messageStore = useMessageStore();
-const { messages } = storeToRefs(messageStore);
+const store = useMessageStore();
+const { messages } = storeToRefs(store);
 
 </script>
 

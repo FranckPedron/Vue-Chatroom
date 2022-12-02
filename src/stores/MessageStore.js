@@ -21,8 +21,10 @@ export const useMessageStore = defineStore('MessageStore', {
             this.currentMessage='';
             this.id++;
         },
-        addMessage() {
-
+        showError(error) {
+            this.displayError = true;
+            this.erroMessage = error;
+            this.currentMessage = '';
         }
 
     }
