@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <MessagesView />
+    <ErrorView v-if="displayError" />
     <FormView />
   </div>
 </template>
@@ -8,6 +9,12 @@
 <script setup>
 import MessagesView from "@/components/MessagesView";
 import FormView from "@/components/FormView";
+import ErrorView from "@/components/ErrorView.vue";
+import {useMessageStore} from "@/stores/MessageStore";
+import {storeToRefs} from "pinia";
+
+const messageStore = useMessageStore();
+const { displayError } = storeToRefs(messageStore);
 </script>
 
 <style lang="scss">
