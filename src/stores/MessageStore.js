@@ -16,8 +16,8 @@ export const useMessageStore = defineStore('MessageStore', {
         }
     },
     actions: {
-        writeMessage(message) {
-            this.messages = [...this.messages,{id: this.id, content: message, author: 'test'}];
+        writeMessage(message, pseudo) {
+            this.messages = [...this.messages,{id: this.id, content: message, author: pseudo}];
             this.currentMessage='';
             this.id++;
         },

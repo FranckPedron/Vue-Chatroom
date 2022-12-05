@@ -17,7 +17,7 @@ import FormView from "@/components/FormView";
     color: vars.$colorText;
     width: 80%;
     margin: auto;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);

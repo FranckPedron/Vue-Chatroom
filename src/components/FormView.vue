@@ -8,17 +8,23 @@
 <script setup>
 import {useMessageStore} from "@/stores/MessageStore";
 import {storeToRefs} from "pinia";
+import {useUserStore} from "@/stores/UserStore";
 
-const store = useMessageStore();
-const {currentMessage} = storeToRefs(store);
+const MessageStore = useMessageStore();
+const UserStore = useUserStore();
 
-const addMessage = (message) => {
+const {currentMessage} = storeToRefs(MessageStore);
+const {pseudo} = storeToRefs(UserStore);
+
+const addMessage = (currentMessage) => {
   if (currentMessage.length === 0) {
-    store.showError('Un message ne peut être vide');
-  } else if (currentMessage.trim().length === 0) {
-    store.showError('Un message ne peut contenir uniquement des espaces');
-  } else {
-    store.writeMessage(message);
+    MessageStore.showError('Un message ne peut être vide');
+  }
+  //   else if (currentMessage.trim().length === 0) {
+  //   store.showError('Un message ne peut contenir uniquement des espaces');
+  // }
+    else {
+    MessageStore.writeMessage(currentMessage, pseudo);
   }
 }
 </script>
