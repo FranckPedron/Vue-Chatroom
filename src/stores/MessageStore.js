@@ -11,7 +11,6 @@ export const useMessageStore = defineStore('MessageStore', {
             currentMessage: '',
             displayError: false,
             errorMessage: '',
-            open: true,
             id: 0
         }
     },
@@ -26,7 +25,6 @@ export const useMessageStore = defineStore('MessageStore', {
             this.errorMessage = error;
             this.currentMessage = '';
         }
-
     }
 })
 
